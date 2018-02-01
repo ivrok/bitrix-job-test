@@ -6,7 +6,6 @@
  * Time: 12:48
  */
 require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
-header('Content-Type: text/html; charset=utf8');
 function exceptionFinish($msg){ //В этой функции помимо завршения сцения могут производится какие-то дополнительные работы, такие, как логирование например.
     die($msg);
 }
@@ -37,6 +36,5 @@ while ($arUser = $rsUsers->Fetch()) {
         sendEmail($arUser['EMAIL'], 'Уведомление об отложенных товарах.', $msg);
     }
 }
-
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/epilog_after.php');
